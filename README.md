@@ -11,7 +11,7 @@ This project was prepared for **Smart India Hackathon 2026**.
 
 - **Problem statement:** SIH26042
 - **Theme:** Smart Education
-- **Team:** Mystic Wizard (SIH07)
+- **Team ID:** T-07
 
 ## What it does
 
