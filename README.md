@@ -1,82 +1,95 @@
 # VISTA
 
-VISTA means Vernacular Intelligence for Smart Teaching and Adaptation.
+**Vernacular Intelligence for Smart Teaching and Adaptation**
 
-It is an AI-assisted classroom suite for Hindi-speaking primary teachers working with Santali, Ho, and Mundari-speaking learners. The prototype focuses on Santali and demonstrates offline-first lesson delivery, Hindi-to-Santali translation, bilingual worksheet generation, Understanding Pulse, and adaptive re-teaching.
+VISTA is an offline-first classroom assistant for primary teachers who teach
+in Hindi and support Santali-speaking learners. It helps a teacher explain a
+lesson, provide the same content in Santali, check understanding, and respond
+to learning gaps without depending on a continuous internet connection.
 
-For a judge-oriented setup and the honest offline/2GB validation status, see
-[`JUDGE_GUIDE.md`](JUDGE_GUIDE.md).
+This project was prepared for **Smart India Hackathon 2026**.
 
-## Project Structure
+- **Problem statement:** SIH26042
+- **Theme:** Smart Education
+- **Team:** Mystic Wizard (SIH07)
+
+## What it does
+
+- Converts a teacher's Hindi text or speech into Santali text and audio.
+- Provides approved lesson phrases and bundled audio when the network is
+  unavailable.
+- Checks learner responses and highlights class-level understanding gaps.
+- Suggests re-teaching prompts, worksheets, and quick checks.
+- Includes a bilingual classroom copilot for short, classroom-safe answers.
+- Runs as a lightweight Android app using Capacitor, with a local FastAPI
+  backend for development and model-backed features.
+
+The main classroom path is:
+
+**Teach -> Translate -> Check -> Understand -> Re-teach**
+
+## Final presentation
+
+The submission presentation is included here:
+
+[SIH-2K26 VISTA Final Presentation](SIH-2K26-VISTA-Final.pptx)
+
+## Project layout
 
 ```text
-Vista/
-  backend/                 FastAPI backend
-  data/                    Seed curriculum data
-  frontend/                Capacitor Android classroom app
-  main.py                  Starts backend and frontend together
-  requirements.txt         Python dependencies
-  TECHNOLOGY_FLOW.md       Technologies and architecture flow
-  METHODOLOGY_AND_WORKFLOW.md
+backend/                 FastAPI API and local model adapters
+data/                    Seed curriculum and classroom data
+frontend/                Capacitor Android classroom app
+scripts/                 Model export and inference utilities
+main.py                  Backend entry point
+requirements.txt         Python dependencies
 ```
 
-## Run Backend
+## Run the backend
+
+Python 3.12 is recommended.
 
 ```powershell
-cd C:\Users\navya\Downloads\Vista\Vista
-python -m venv env
-.\env\Scripts\Activate.ps1
-pip install -r requirements.txt
-uvicorn backend.main:app --host 0.0.0.0 --port 8000
-```
-
-The default backend uses a local SQLite database and never contacts a cloud API.
-For authoring, install Ollama while online, pull the configured model, then run
-`ollama serve`; after that the authoring API uses only `127.0.0.1`.
-
-## Prepare the offline translation model
-
-Do not guess the AI4Bharat checkpoint name. Confirm the distilled indic-indic
-checkpoint and its parameter count first, then export and quantize it:
-
-```powershell
+python -m venv vista-env
+.\vista-env\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python scripts\export_indictrans2_onnx.py --model-id <confirmed-local-or-HF-checkpoint> --output D:\AIModels\indictrans2-int8
+python -m backend.seed_database
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
 ```
 
-Set `INDICTRANS2_MODEL_NAME` to the exported local model directory and keep
-`INDICTRANS2_LOCAL_FILES_ONLY=true`. Run one desktop inference before testing
-the same model with Vosk and the phrase bank loaded on a 2048 MB Android
-emulator. Record the actual `adb shell dumpsys meminfo` TOTAL PSS; do not use
-an estimate in the presentation.
+The default database is local SQLite. Cloud credentials are not required for
+the bundled classroom flow. Local Ollama authoring is optional.
 
-## Run Android App
+## Build the Android app
+
+Install Node.js, Android Studio, and the Android SDK first.
 
 ```powershell
-cd C:\Users\navya\Downloads\Vista\Vista\frontend
+cd frontend
 npm install
-npm run cap:prepare
+npm run build
 npm run cap:sync
 cd android
 .\gradlew.bat --no-daemon assembleDebug
-.\gradlew.bat installDebug
 ```
 
-If Gradle fails with `Unsupported class file major version 69`, it is using Java 25. This project pins Android Studio JBR in `frontend/android/gradle.properties`.
+The debug APK is generated at:
 
-If Gradle fails with `The paging file is too small`, close heavy apps or increase Windows virtual memory before rebuilding.
+```text
+frontend/android/app/build/outputs/apk/debug/app-debug.apk
+```
 
-## Prototype Highlights
+For an Android emulator using the development backend, the host computer is
+available at `http://10.0.2.2:8000`. Start the backend with
+`--host 0.0.0.0`.
 
-- Local IndicTrans2 endpoint for arbitrary Hindi-to-Santali text translation.
-- Offline voice bridge path using Vosk Hindi ASR plus IndicTrans2.
-- Approved phrase pack fallback for low-connectivity classrooms.
-- Included lesson audio: `Science.wav`, `Science santali.wav`, and `hindi santali.wav`.
-- Dynamic Understanding Pulse with learner evidence and misconception tracking.
-- Re-teach plan synced to the current class misconception.
-- Performance-based personalized worksheets: weak concepts and accuracy determine focus and difficulty;
-  local Ollama authoring is optional, while the measured-gap template remains available offline.
-- Floating bilingual Hindi/Santali AI Copilot backed by `/copilot`.
-- Lesson co-pilot icon that suggests quick checks and re-teach cues.
-- Hindi speech → local Vosk transcription → local IndicTrans2 Hindi-to-Santali translation is offline
-  when the models are installed. Speech output uses bundled reviewed recordings or the Android device voice.
+## Offline use
+
+The app bundles its classroom interface, seed content, reviewed lesson audio,
+and offline phrase-bank fallbacks. Vosk and IndicTrans2 can be configured with
+local model files using `.env.example`.
+
+Arbitrary on-device translation still requires the selected local IndicTrans2
+model to be downloaded and configured. The application is designed so that
+approved classroom content remains usable when that model or the network is
+not available.
