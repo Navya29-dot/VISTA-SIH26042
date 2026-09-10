@@ -1,0 +1,19 @@
+{
+  "name": "vista-frontend",
+  "private": true,
+  "scripts": {
+    "cap:prepare": "powershell -NoProfile -Command \"New-Item -ItemType Directory -Force www | Out-Null; Copy-Item index.html www/index.html -Force; if (Test-Path www/audio) { Remove-Item www/audio -Recurse -Force }; Copy-Item audio www/audio -Recurse -Force\"",
+    "cap:add:android": "cap add android",
+    "cap:sync": "cap sync android",
+    "cap:open": "cap open android",
+    "build": "npm run cap:prepare"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.2",
+    "@capacitor/cli": "^7.4.2",
+    "@capacitor/core": "^7.4.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-scripts": "^5.0.1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "appId": "org.vista.classroom",
+  "appName": "VISTA Classroom",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
+}

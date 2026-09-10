@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: vista_postgres
+    environment:
+      POSTGRES_DB: Vista
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: vista
+    ports:
+      - "5433:5432"
+    volumes:
+      - vista_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  vista_postgres_data:

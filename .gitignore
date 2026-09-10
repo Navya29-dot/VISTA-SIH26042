@@ -1,0 +1,35 @@
+# Local secrets and runtime state
+.env
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+env/
+vista-env/
+
+# Node and Android generated files
+frontend/node_modules/
+frontend/www/
+frontend/android/.gradle/
+frontend/android/build/
+frontend/android/app/build/
+frontend/android/local.properties
+frontend/android/.idea/
+
+# Local model files and exports
+*.onnx
+*.onnx.data
+models/
+AIModels/
+
+# Editors and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">VISTA Classroom</string>
+    <string name="title_activity_main">VISTA Classroom</string>
+    <string name="package_name">org.vista.classroom</string>
+    <string name="custom_url_scheme">org.vista.classroom</string>
+</resources>

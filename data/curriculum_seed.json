@@ -1,0 +1,178 @@
+{
+  "languages": [
+    { "code": "as-IN", "name": "Assamese", "native_name": "Assamese" },
+    { "code": "bn-IN", "name": "Bengali", "native_name": "Bengali" },
+    { "code": "brx-IN", "name": "Bodo", "native_name": "Bodo" },
+    { "code": "doi-IN", "name": "Dogri", "native_name": "Dogri" },
+    { "code": "en-IN", "name": "English", "native_name": "English" },
+    { "code": "gu-IN", "name": "Gujarati", "native_name": "Gujarati" },
+    { "code": "hi-IN", "name": "Hindi", "native_name": "Hindi" },
+    { "code": "kn-IN", "name": "Kannada", "native_name": "Kannada" },
+    { "code": "ks-IN", "name": "Kashmiri", "native_name": "Kashmiri" },
+    { "code": "kok-IN", "name": "Konkani", "native_name": "Konkani" },
+    { "code": "mai-IN", "name": "Maithili", "native_name": "Maithili" },
+    { "code": "ml-IN", "name": "Malayalam", "native_name": "Malayalam" },
+    { "code": "mni-IN", "name": "Manipuri", "native_name": "Manipuri" },
+    { "code": "mr-IN", "name": "Marathi", "native_name": "Marathi" },
+    { "code": "ne-IN", "name": "Nepali", "native_name": "Nepali" },
+    { "code": "od-IN", "name": "Odia", "native_name": "Odia" },
+    { "code": "pa-IN", "name": "Punjabi", "native_name": "Punjabi" },
+    { "code": "sa-IN", "name": "Sanskrit", "native_name": "Sanskrit" },
+    { "code": "sat-IN", "name": "Santali", "native_name": "Santali" },
+    { "code": "sd-IN", "name": "Sindhi", "native_name": "Sindhi" },
+    { "code": "ta-IN", "name": "Tamil", "native_name": "Tamil" },
+    { "code": "te-IN", "name": "Telugu", "native_name": "Telugu" },
+    { "code": "ur-IN", "name": "Urdu", "native_name": "Urdu" }
+  ],
+  "concepts": [
+    {
+      "slug": "math-fractions",
+      "subject": "Mathematics",
+      "grade_level": 5,
+      "name": "Fractions",
+      "key_idea": "A fraction represents part of a whole using a numerator and denominator.",
+      "teacher_note": "Use familiar objects such as roti, fruit, chocolate bars, or fraction strips."
+    },
+    {
+      "slug": "math-percentage",
+      "subject": "Mathematics",
+      "grade_level": 5,
+      "name": "Percentage",
+      "key_idea": "Percentage means a value out of 100 and is calculated as part divided by whole multiplied by 100.",
+      "teacher_note": "Watch for students reversing obtained marks and total marks."
+    },
+    {
+      "slug": "science-physical-chemical-change",
+      "subject": "Science",
+      "grade_level": 6,
+      "name": "Physical and Chemical Changes",
+      "key_idea": "A physical change does not form a new substance; a chemical change forms a new substance.",
+      "teacher_note": "Use melting ice and burning paper to separate reversible clues from the stronger new-substance test."
+    },
+    {
+      "slug": "science-photosynthesis",
+      "subject": "Science",
+      "grade_level": 6,
+      "name": "Photosynthesis",
+      "key_idea": "Green plants make food from carbon dioxide and water using sunlight and chlorophyll.",
+      "teacher_note": "Frame the leaf as a food factory to make inputs and outputs concrete."
+    },
+    {
+      "slug": "hindi-sandhi",
+      "subject": "Hindi",
+      "grade_level": 7,
+      "name": "Sandhi",
+      "key_idea": "Sandhi is the change that happens when two sounds or letters combine.",
+      "teacher_note": "Teach Sandhi and Sandhi-vichhed together with simple word splitting."
+    },
+    {
+      "slug": "hindi-samas",
+      "subject": "Hindi",
+      "grade_level": 7,
+      "name": "Samas",
+      "key_idea": "Samas combines two or more words into a shorter compound word.",
+      "teacher_note": "Contrast Samas with Sandhi so students see word compression versus sound change."
+    },
+    {
+      "slug": "english-tenses",
+      "subject": "English",
+      "grade_level": 6,
+      "name": "Tenses",
+      "key_idea": "Tense tells the time of an action: present, past, or future.",
+      "teacher_note": "Use time clues such as today, yesterday, and tomorrow."
+    },
+    {
+      "slug": "english-subject-verb-agreement",
+      "subject": "English",
+      "grade_level": 6,
+      "name": "Subject-Verb Agreement",
+      "key_idea": "The subject and verb must agree in number and person.",
+      "teacher_note": "Focus on simple-present third-person singular examples."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "concept_slug": "math-fractions",
+      "question_text": "Which is greater: 1/2 or 1/4?",
+      "correct_answer": "1/2",
+      "easy_explanation": "If the numerator is the same, the smaller denominator gives the bigger piece.",
+      "common_mistake": "Thinking that the bigger denominator means the bigger fraction.",
+      "reteach_method": "Show the same roti divided into halves and quarters, then compare one piece from each."
+    },
+    {
+      "id": 2,
+      "concept_slug": "math-fractions",
+      "question_text": "What is a fraction? Explain numerator and denominator using 3/5.",
+      "correct_answer": "A fraction is part of a whole. In 3/5, 3 is the numerator and 5 is the denominator.",
+      "easy_explanation": "Imagine 5 equal pieces of chocolate. If 3 are taken, the fraction is 3/5.",
+      "common_mistake": "Mixing up the numerator and denominator.",
+      "reteach_method": "Ask the learner to draw 5 boxes and shade 3 of them."
+    },
+    {
+      "id": 3,
+      "concept_slug": "math-percentage",
+      "question_text": "A student scored 45 marks out of 60. Find the percentage.",
+      "correct_answer": "75%",
+      "easy_explanation": "Percentage means out of 100: 45 divided by 60 multiplied by 100 is 75.",
+      "common_mistake": "Dividing total marks by obtained marks.",
+      "reteach_method": "Write part divided by whole multiplied by 100, then identify part and whole from the question."
+    },
+    {
+      "id": 4,
+      "concept_slug": "science-physical-chemical-change",
+      "question_text": "What is the difference between a physical change and a chemical change? Give one example of each.",
+      "correct_answer": "A physical change forms no new substance, such as melting ice. A chemical change forms a new substance, such as burning paper.",
+      "easy_explanation": "Ice melting is still water. Paper burning creates ash and gases.",
+      "common_mistake": "Using reversibility as the only test.",
+      "reteach_method": "Sort classroom examples into 'new substance formed' and 'no new substance formed'."
+    },
+    {
+      "id": 5,
+      "concept_slug": "science-photosynthesis",
+      "question_text": "What do plants need for photosynthesis?",
+      "correct_answer": "Carbon dioxide, water, sunlight, and chlorophyll.",
+      "easy_explanation": "A green leaf uses sunlight like energy to make food from water and carbon dioxide.",
+      "common_mistake": "Forgetting carbon dioxide or chlorophyll.",
+      "reteach_method": "Draw a leaf and label inputs, helper, food output, and oxygen output."
+    },
+    {
+      "id": 6,
+      "concept_slug": "hindi-sandhi",
+      "language_code": "hi-IN",
+      "question_text": "Sandhi kya hai? Him + aalay ka sandhi roop likhiye.",
+      "correct_answer": "Do varnon ke mel se hone wale parivartan ko sandhi kahte hain. Him + aalay = Himalaya.",
+      "easy_explanation": "Jab do sounds milkar shabd ka roop badalte hain, use sandhi kahte hain.",
+      "common_mistake": "Sandhi ko samas samajh lena.",
+      "reteach_method": "Pehle mool sounds dikhayein, phir naya shabd bolkar aur likhkar tulna karvayein."
+    },
+    {
+      "id": 7,
+      "concept_slug": "hindi-samas",
+      "language_code": "hi-IN",
+      "question_text": "Samas kya hai? Raja ka putra ka samast pad likhiye.",
+      "correct_answer": "Do ya adhik shabdon ko milakar sankshipt naya shabd banana samas hai. Raja ka putra = rajputra.",
+      "easy_explanation": "Lambe word group ko chhota karke naya word banana samas hai.",
+      "common_mistake": "Samas-vigrah aur samast pad ko ulta likhna.",
+      "reteach_method": "Ek taraf vistaar roop aur doosri taraf sankshipt roop likhvayein."
+    },
+    {
+      "id": 8,
+      "concept_slug": "english-tenses",
+      "question_text": "Correct this sentence: I go to school yesterday.",
+      "correct_answer": "I went to school yesterday.",
+      "easy_explanation": "Yesterday tells us the action happened in the past, so use went.",
+      "common_mistake": "Using present tense with a past-time word.",
+      "reteach_method": "Make a three-column chart: today I go, yesterday I went, tomorrow I will go."
+    },
+    {
+      "id": 9,
+      "concept_slug": "english-subject-verb-agreement",
+      "question_text": "Choose the correct sentence: She play cricket. / She plays cricket.",
+      "correct_answer": "She plays cricket.",
+      "easy_explanation": "In simple present tense, she usually takes a verb ending in s or es.",
+      "common_mistake": "Forgetting the s with he, she, or it.",
+      "reteach_method": "Compare I play, they play, and she plays with spoken examples."
+    }
+  ]
+}
